@@ -1,0 +1,25 @@
+1.Ouvrir power shell en tant qu'administrateur
+2.activer le service "ssh-agent"
+    *Commande: Get-Service ssh-agent | Set-Service -StartupType Automatic
+3.Démarer le service
+    *commande: Start-Service ssh-agent
+4.Ajouter ta clé SSH à l’agent
+    *commande: ssh-add "$env:USERPROFILE\.ssh\id_rsa"
+5.Vérifier que la clé est bien chargée
+    *commande: ssh-add -l
+6. Vérifier si la clé publique est bien sur GitHub
+    *commande: type $env:USERPROFILE\.ssh\id_rsa.pub
+    *Copie tout ce qui s’affiche (ça commence par ssh-rsa AAAAB3Nza...).
+    *Va sur https://github.com/settings/keys dans ton navigateur.
+    *Vérifie que cette clé est bien dans la liste des clés.
+        -Si elle n’y est pas, clique sur New SSH key, colle la clé, 
+        donne-lui un titre (ex: “PC de Loïc”), puis sauvegarde.
+    * Tester la connexion SSH à GitHub
+        -commande: ssh -T git@github.com
+7.Pousser le code, fichier
+    *commande: git push -u origin master
+
+Bonus: Ajouter ou mettre à jour son ttravail
+    1.git add . ou git add "nom du program à ajouter"
+    2.git commit -m "ajouter un commentaire à chaque mise à jour pour la décrire"
+    3.git push
