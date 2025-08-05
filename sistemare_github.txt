@@ -19,7 +19,7 @@
 7.Pousser le code, fichier
     *commande: git push -u origin master
 
-Bonus: Ajouter ou mettre à jour son ttravail
+Bonus: Ajouter ou mettre à jour son travail
     1.git add . ou git add "nom du program à ajouter"
     2.git commit -m "ajouter un commentaire à chaque mise à jour pour la décrire"
     3.git push
